@@ -1,0 +1,19 @@
+ <td>                      
+                            <a href="#modal-status" class="main__table-btn main__table-btn--banned open-modal">
+                                <i class="icon ion-ios-lock"></i>
+                            </a>
+                            <a href="#" class="main__table-btn main__table-btn--view">
+                                <i class="icon ion-ios-eye"></i>
+                            </a>
+                            <a href="{{route('phim.edit',$tt->movieId)}}" class="main__table-btn main__table-btn--edit">
+                                <i class="icon ion-ios-create"></i>
+                            </a>
+                            <form action="{{route('phim.destroy',$tt->movieId)}}" method="post">
+                                {{csrf_field()}}
+                                {!! method_field('delete') !!}
+                                <button onclick="return confirm('Xóa thi?t hông?');"
+                                    class="btn btn-danger main__table-btn main__table-btn--delete" type="submit">
+                                    <i class="icon ion-ios-trash"></i>
+                                </button>
+                            </form>
+                    </td>
